@@ -8,6 +8,7 @@ namespace FileUploadApp.Store
         public static IServiceCollection AddStoreInternalServices(this IServiceCollection services)
         {
             services.AddScoped<IFilesRepository, FilesRepository>();
+            services.AddScoped<IBannedWordsRepository, BannedWordsRepository>();
             return services;
         }
     }

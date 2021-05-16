@@ -8,6 +8,7 @@ namespace FileUploadApp.File
         public static IServiceCollection AddFilesInternalServices(this IServiceCollection services)
         {
             services.AddScoped<IFilesManagement, FileManagement>();
+            services.AddScoped<IBannedWords, BannedWords>();
             return services;
         }
     }

@@ -1,16 +1,17 @@
-﻿using System.Collections.Generic;
-using System.IO;
+﻿using FileUploadApp.Store;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace FileUploadApp.File
 {
     public interface IFilesManagement
     {
-        Task<bool> InsertBannedWord(string wordText);
 
-        Task<IEnumerable<string>> GetBannedWordsAsync();
+        Task<IEnumerable<string>> InsertFileInfo(string filePath);
 
-        Task<string> UploadFile(Stream filefileContent);
+        Task<IEnumerable<IFileInfoData>> GetFileInfoAsync();
+
+        bool DeleteFileInfo(int id);
 
     }
 }

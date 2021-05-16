@@ -12,7 +12,7 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "api/banndWords",
+      "launchUrl": "api/bannedWords",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
@@ -20,7 +20,7 @@
     "FileUploadApp.File.Api": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "api/banndWords",
+      "launchUrl": "api/bannedWords",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },

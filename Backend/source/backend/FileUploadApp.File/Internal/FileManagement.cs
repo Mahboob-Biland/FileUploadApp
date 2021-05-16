@@ -1,7 +1,5 @@
 ﻿using FileUploadApp.Store;
-using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Threading.Tasks;
 
 namespace FileUploadApp.File.Internal
@@ -13,19 +11,24 @@ namespace FileUploadApp.File.Internal
         {
             _fileRepository = fileRepository;
         }
-        public async Task<IEnumerable<string>> GetBannedWordsAsync()
+
+        public async Task<IEnumerable<string>> InsertFileInfo(string filePath)
         {
-            return await _fileRepository.GetBannedWordsAsync();
+            List<string> bannedWords = new List<string>() { "Test1", "Test2" };
+            await _fileRepository.InsertFileInfo(filePath, string.Join(",", bannedWords));
+
+            return bannedWords;
         }
 
-        public async Task<bool> InsertBannedWord(string wordText)
+        public async Task<IEnumerable<IFileInfoData>> GetFileInfoAsync()
         {
-            return await _fileRepository.InsertBannedWord(wordText);
+            return await _fileRepository.GetFileInfoAsync();
         }
 
-        public Task<string> UploadFile(Stream filefileContent)
+        public bool DeleteFileInfo(int id)
         {
-            throw new NotImplementedException();
+            return _fileRepository.DeleteFileInfo(id);
         }
+
     }
 }

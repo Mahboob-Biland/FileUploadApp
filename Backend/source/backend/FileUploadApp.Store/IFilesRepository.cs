@@ -5,11 +5,11 @@ namespace FileUploadApp.Store
 {
     public interface IFilesRepository
     {
-        Task<bool> InsertBannedWord(string wordText);
+        Task<bool> InsertFileInfo(string filePath, string bannedWords);
 
-        Task<IEnumerable<string>> GetBannedWordsAsync();
+        Task<IEnumerable<IFileInfoData>> GetFileInfoAsync();
 
-        Task<bool> InsertFileInfo(string filePath,string bannedWords);
+        bool DeleteFileInfo(int id);
 
     }
 }

@@ -31,7 +31,12 @@ namespace FileUploadApp.File.Api
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UseCors(builder =>
+            {
+                builder.AllowAnyOrigin();
+                builder.AllowAnyMethod();
+                builder.AllowAnyHeader();
+            });
             app.UseHttpsRedirection();
 
             app.UseRouting();
