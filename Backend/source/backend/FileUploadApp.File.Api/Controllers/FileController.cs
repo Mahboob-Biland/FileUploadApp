@@ -5,6 +5,7 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
 
@@ -46,7 +47,14 @@ namespace FileUploadApp.File.Api.Controllers
 
                 IEnumerable<string> bannedWordsList = await _fileManagement.InsertFileInfo(fullPath);
 
-                return Ok(new { bannedWordsList });
+                if (bannedWordsList.Count() > 0)
+                {
+                    return Ok(new { message = "File Uploaded Successfully, Banned Words found. Words : " + string.Join(",", bannedWordsList) });
+                }
+                else
+                {
+                    return Ok(new { message = "File Uploaded Successfully, No Banned Words found." });
+                }
             }
             else
             {

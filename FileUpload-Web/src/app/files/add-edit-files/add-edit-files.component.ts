@@ -13,7 +13,9 @@ export class AddEditFilesComponent implements OnInit {
   id:string;
   filePath:string;
   formData:any;
+  fileLoaded:boolean;
   ngOnInit(): void {
+    this.fileLoaded = false;
   }
 
   UploadFile(event){
@@ -23,13 +25,17 @@ export class AddEditFilesComponent implements OnInit {
     formData.append('uploadFile',file,file.name);
 
    this.formData = formData;
-   
+   this.fileLoaded = true;
   }
 
-  UploadToServer(){
-    this.service.uploadFile(this.formData).subscribe( res =>
+  async UploadToServer(){
+    await this.service.uploadFile(this.formData).subscribe( res =>
       {
         alert(res["message"].toString());
+        this.formData = null;
+        this.fileLoaded = false;
       });
+
+
   }
 }

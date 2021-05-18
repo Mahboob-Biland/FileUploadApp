@@ -1,8 +1,10 @@
-<div class="form-froup row">
+<div class="form-froup row" ngNativeValidate ng-form #form >
     <label class="col-sm-2 col-form-label">Word</label>
     <div class="col-sm-10">
-        <input type="text" class="form-control" [(ngModel)]="wordText" placeholder="Enter Banned Word Text">
+        <input type="text" name="wordText" id="wordText" class="form-control" [(ngModel)]="wordText"  placeholder="Enter Banned Word Text" (keydown.space)="$event.preventDefault()">
     </div>
 </div>
-<button (click)="AddBannedWord()" *ngIf="bannedWord.id==0" class="btn btn-primary">Add</button>
-<button (click)="UpdateBannedWord()" *ngIf="bannedWord.id!=0" class="btn btn-primary" >edit</button>
+<div class="float-right" style="padding-top: 10px">
+    <button (click)="AddBannedWord()" type='submit' [disabled]="(wordText == '')? true : false" *ngIf="bannedWord.id==0" class="btn btn-primary float-right mr-3">Add</button>
+    <button (click)="UpdateBannedWord()" *ngIf="bannedWord.id!=0" [disabled]="(wordText == '')? true : false" class="btn btn-primary float-right mr-3">Update</button>
+</div>

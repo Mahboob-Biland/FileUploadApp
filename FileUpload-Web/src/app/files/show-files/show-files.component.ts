@@ -33,14 +33,14 @@ export class ShowFilesComponent implements OnInit {
     });
   }
 
-  deleteClick(item){
+  async deleteClick(item){
     if(confirm("Are you sure to delete this word?")){
-      this.service.deleteFile(item.id).subscribe( res =>
+      await this.service.deleteFile(item.id).subscribe( res =>
         {
           alert(res["message"].toString());
+          this.refrishFilesList();
         });
     }
-    this.refrishFilesList();
   }
 
 }

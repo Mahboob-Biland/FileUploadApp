@@ -8,7 +8,7 @@ namespace FileUploadApp.Store.Internal
 {
     internal class FilesRepository : IFilesRepository
     {
-        public static string DbFile => Path.GetFullPath(System.AppContext.BaseDirectory + "..\\..\\..\\..\\..\\..\\..\\" + Constants.DbName);
+        public static string DbFile => Path.GetFullPath(System.AppContext.BaseDirectory + "..\\..\\..\\..\\..\\..\\" + Constants.DbName);
 
         public static SqliteConnection DbConnection()
         {

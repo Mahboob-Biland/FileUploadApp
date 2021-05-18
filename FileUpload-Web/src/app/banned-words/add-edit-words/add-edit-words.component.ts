@@ -22,7 +22,10 @@ export class AddEditWordsComponent implements OnInit {
     this.service.addBannedWord({ bannedWord: this.wordText}).subscribe( res =>
       {
         alert(res["message"].toString());
+        this.wordText = '';
+        this.id = '';
       });
+
   }
 
   UpdateBannedWord(){
@@ -33,6 +36,10 @@ export class AddEditWordsComponent implements OnInit {
     this.service.updateBannedWord(val).subscribe( res =>
       {
         alert(res["message"].toString());
+        this.wordText = '';
+        this.id = '';
       });
+
+
   } 
 }

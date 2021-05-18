@@ -6,4 +6,4 @@
             (change)="UploadFile($event)">
     </div>
 </div>
-<button (click)="UploadToServer()" class="btn btn-primary">Upload</button>
+<button (click)="UploadToServer()" [disabled]="!fileLoaded" class="btn btn-primary float-right mr-3">Upload</button>

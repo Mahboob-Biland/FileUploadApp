@@ -22,7 +22,7 @@ namespace FileUploadApp.File.Api.Controllers
             _bannedWords = bannedWords;
         }
 
-        [HttpGet]
+        [HttpGet(Name = nameof(GetBannedWordsAsync))]
         public async Task<IActionResult> GetBannedWordsAsync()
         {
             IEnumerable<IBannedWordsData> result = await _bannedWords.GetBannedWordsAsync();
@@ -30,7 +30,7 @@ namespace FileUploadApp.File.Api.Controllers
             return new OkObjectResult(new { banndWords = result });
         }
 
-        [HttpPost]
+        [HttpPost(Name = nameof(InsertBannedWordAsync))]
         public async Task<IActionResult> InsertBannedWordAsync([FromBody] dynamic body)
         {
             try
@@ -64,7 +64,7 @@ namespace FileUploadApp.File.Api.Controllers
 
         }
 
-        [HttpPut]
+        [HttpPut(Name = nameof(UpdateBannedWordAsync))]
         public async Task<IActionResult> UpdateBannedWordAsync([FromBody] dynamic body)
         {
             try
@@ -94,7 +94,7 @@ namespace FileUploadApp.File.Api.Controllers
             }
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("{id}", Name = nameof(DeleteBannedWordAsync))]
         public async Task<IActionResult> DeleteBannedWordAsync([FromRoute] int id)
         {
             try

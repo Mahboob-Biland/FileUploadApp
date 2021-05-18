@@ -48,14 +48,15 @@ export class ShowWordsComponent implements OnInit {
     this.ActivateAddEditFileComp=true;
   }
 
-  deleteClick(item){
+  async deleteClick(item){
     if(confirm("Are you sure to delete this word?")){
-      this.service.deleteBannedWord(item.id).subscribe( res =>
+      await this.service.deleteBannedWord(item.id).subscribe( res =>
         {
           alert(res["message"].toString());
+          this.refrishBannedWordsList();
         });
     }
-    this.refrishBannedWordsList();
+    
   }
 
 }

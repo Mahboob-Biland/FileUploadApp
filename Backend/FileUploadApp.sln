@@ -9,11 +9,22 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Backend", "Backend", "{620F
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileUploadApp.Store", "source\backend\FileUploadApp.Store\FileUploadApp.Store.csproj", "{AFDB6631-3321-4F11-A2FA-B6B4DC92801A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileUploadApp.File", "source\backend\FileUploadApp.File\FileUploadApp.File.csproj", "{04D3B63D-9E97-45C3-BE84-86E897676427}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileUploadApp.File", "source\backend\FileUploadApp.File\FileUploadApp.File.csproj", "{04D3B63D-9E97-45C3-BE84-86E897676427}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{D49B1B84-1BBA-46AE-9079-F6588A8773E8}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileUploadApp.File.Api", "source\backend\FileUploadApp.File.Api\FileUploadApp.File.Api.csproj", "{696BDB1A-0BF7-44AD-A3FC-E0895F953D84}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scenarios", "scenarios", "{DE3153CB-28FD-403A-B077-D0CDBE7FD716}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core.Scenarios", "Core.Scenarios", "{2E3AAEC2-177A-4C56-9E54-4AB5DF3087B6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Scenarios", "scenarios\Core.Scenarios\Core.Scenarios.csproj", "{9FA32382-50AE-4E41-AE6F-23F96A30E65E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TestData", "TestData", "{0F7F451B-D16F-41C5-911D-7321A8DD1AF7}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\..\Users\mbd\Desktop\Assig\test.txt = ..\..\..\..\Users\mbd\Desktop\Assig\test.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +44,10 @@ Global
 		{696BDB1A-0BF7-44AD-A3FC-E0895F953D84}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{696BDB1A-0BF7-44AD-A3FC-E0895F953D84}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{696BDB1A-0BF7-44AD-A3FC-E0895F953D84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FA32382-50AE-4E41-AE6F-23F96A30E65E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FA32382-50AE-4E41-AE6F-23F96A30E65E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FA32382-50AE-4E41-AE6F-23F96A30E65E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FA32382-50AE-4E41-AE6F-23F96A30E65E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -43,6 +58,9 @@ Global
 		{04D3B63D-9E97-45C3-BE84-86E897676427} = {620F1F94-B522-465D-8940-00453CEDA5BA}
 		{D49B1B84-1BBA-46AE-9079-F6588A8773E8} = {161D045A-E331-4699-AA32-2637D04F82A0}
 		{696BDB1A-0BF7-44AD-A3FC-E0895F953D84} = {D49B1B84-1BBA-46AE-9079-F6588A8773E8}
+		{2E3AAEC2-177A-4C56-9E54-4AB5DF3087B6} = {DE3153CB-28FD-403A-B077-D0CDBE7FD716}
+		{9FA32382-50AE-4E41-AE6F-23F96A30E65E} = {2E3AAEC2-177A-4C56-9E54-4AB5DF3087B6}
+		{0F7F451B-D16F-41C5-911D-7321A8DD1AF7} = {2E3AAEC2-177A-4C56-9E54-4AB5DF3087B6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EFAA5A15-2DE5-4662-B8CE-5D92C78789BD}
